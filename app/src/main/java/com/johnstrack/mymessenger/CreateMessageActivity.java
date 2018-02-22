@@ -2,6 +2,7 @@ package com.johnstrack.mymessenger;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 public class CreateMessageActivity extends Activity {
 
@@ -9,5 +10,10 @@ public class CreateMessageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_message);
+    }
+
+    //Call onMessage() when the button is clicked
+    public void onSendMessage (View view) {
+
     }
 }
