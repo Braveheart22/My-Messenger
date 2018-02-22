@@ -4,8 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
+//import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class CreateMessageActivity extends Activity {
+
+    public static final String EXTRA_MESSAGE = "message";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +20,10 @@ public class CreateMessageActivity extends Activity {
 
     //Call onMessage() when the button is clicked
     public void onSendMessage (View view) {
+        EditText messageView = findViewById(R.id.message);
+        String messageText = messageView.getText().toString();
         Intent intent = new Intent(this, ReceiveMessageActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, messageText);
         startActivity(intent);
     }
 }
